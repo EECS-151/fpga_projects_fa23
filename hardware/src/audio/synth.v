@@ -8,7 +8,7 @@ module synth #(
     input [4:0] mod_shift,
     input [N_VOICES-1:0] note_en,
 
-    output reg [13:0] sample,
+    output [13:0] sample,
     output sample_valid,
     input sample_ready
 );
@@ -31,7 +31,7 @@ module synth #(
     reg [23:0] mod_samples_shifted;
     wire [23:0] carrier_fcws_modulated;
     //// Carrier NCOs
-    reg carrier_next_sample;
+    wire carrier_next_sample;
     wire [13:0] carrier_samples;
     //// Carrier samples
     reg [13:0] carrier_samples_ff;
